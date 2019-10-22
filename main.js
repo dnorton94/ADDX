@@ -1,3 +1,49 @@
+var reagents = [
+"carbonate",
+"sulphuric acid",
+"silver nitrate",
+"potassium nitrate",
+"calcium hypochlorite",
+"potassium dichromate"
+];
+
+var temps = [
+"10",
+"20",
+"30",
+"40",
+"50",
+"60"
+];
+
+function randomElement(myArray)
+{
+    return myArray[Math.floor(Math.random() * myArray.length)];
+}
+
+function randomReceipe()
+{
+    var receipe = {
+        "starting": "",
+        "final": "",
+        "limit": "",
+        "reagent": "",
+        "solvent": "",
+        "temperature": ""
+    }
+
+    receipe["temp"] = randomElement(temps);
+
+    return receipe;
+}
+
+var receipes = [];
+var numReceipes = 10;
+
+for (i = 0; i < numReceipes; i++) {
+    receipes.push(randomReceipe());
+}
+
 var columnDefs = [
     {headerName: "Starting Compound", field: "starting", width: 150},
     {headerName: "Final Compound", field: "final", width: 90},
@@ -98,56 +144,13 @@ function onRangeSelectionChanged(event) {
 }
 
 
-var dataOld = [{
-    "athlete": "Michael Phelps",
-    "age": 23,
-    "country": "United States",
-    "year": 2008,
-    "date": "24/08/2008",
-    "sport": "Swimming",
-    "gold": 8,
-    "silver": 0,
-    "bronze": 0,
-    "total": 8
-},
-{
-    "athlete": "Michael Phelps",
-    "age": 19,
-    "country": "United States",
-    "year": 2004,
-    "date": "29/08/2004",
-    "sport": "Swimming",
-    "gold": 6,
-    "silver": 0,
-    "bronze": 2,
-    "total": 8
-}
-]
-
-var data = [{
-    "starting": "X",
-    "final": "Y",
-    "limit": "C02",
-    "reagent": "C02",
-    "solvent": "acetone",
-    "temperature": "90"
-},
-{
-    "starting": "XX",
-    "final": "YY",
-    "limit": "C02",
-    "reagent": "H20",
-    "solvent": "acetone",
-    "temperature": "90"
-}]
-
 
 // setup the grid after the page has finished loading
 document.addEventListener('DOMContentLoaded', function() {
     var gridDiv = document.querySelector('#myGrid');
     new agGrid.Grid(gridDiv, gridOptions);
 
-    gridOptions.api.setRowData(data);
+    gridOptions.api.setRowData(receipes);
 
 
     // // do http request to get our sample data - not using any framework to keep the example self contained.
