@@ -1,0 +1,79 @@
+/* Axis Knobs */
+.controlsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  width: 0px;
+  padding: 40px;
+  align-items: center;
+}
+
+.controlItem {
+    padding: 15px;
+    text-align: center;
+    vertical-align: top;
+    text-align: center;
+}
+
+.controlsTitle {
+  text-align: center;
+}
+
+header {
+  grid-column: 1 / 4;
+  text-align: center
+}
+
+.levelBarBg {
+  width: 100%;
+  background-color: #AB3E16;
+  border-width: 0px;
+  border-style: solid;
+}
+
+.levelBarFg {
+  width: 100%;
+  height: 30px;
+  color: white;
+  font-size: 25px;
+}
+
+#pitchBar {
+    background-color: #48120E;
+    color: #E7CC8F;
+}
+    
+#yawBar {
+    background-color: #EFAA52;
+    color: #48120E;
+
+}
+    
+#rollBar {
+    background-color: #F8F3E6;
+    color: #48120E;
+}
+    
+body {
+  background-color: #AB3E16;
+  color: #48120E;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+/*
+#F8F3E6
+CHIFFON
+
+#E7CC8F
+VANILLA
+
+#EFAA52
+BUTTERCUP
+
+#AB3E16
+RUST
+
+#48120E
+MAHOGANY
+
+*/

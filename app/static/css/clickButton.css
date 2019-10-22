@@ -1,0 +1,24 @@
+/* Thanks: https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate3 */
+.clickButton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #48120E;
+  background-color: #EFAA52;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  font-weight: bold;
+}
+
+.clickButton:hover {background-color: #EFAA52}
+
+.clickButton:active {
+  background-color: #E7CC8F;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

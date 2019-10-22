@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Video Streaming Demonstration</title>
+  </head>
+  <body>
+    <h1>Video Streaming Demonstration</h1>
+    <img id="video" src="{{ url_for('video_feed') }}">
+
+
+    <form id="settings" action="/settings">
+    {% for key, value in settings.items() %}
+        {{key}}: <input type="text" name="{{key}}" value="{{value}}">
+        <br>
+    {% endfor %}
+        <input type="submit" value="Submit">
+
+
+      
+      
+<!--       <br>
+      Last name:<br>
+      <input type="text" name="lastname" value="Mouse">
+      <br><br>
+       -->
+
+       <!-- just a comment -->
+    </form>
+
+    <button onclick="myFunction()">Click me</button>
+
+    <script>
+    function myFunction() {
+        var element = document.getElementById("video");
+        element.parentNode.removeChild(element);
+        document.getElementById("settings").submit();
+    }
+    </script>
+
+
+  </body>
+
+
+</html>
