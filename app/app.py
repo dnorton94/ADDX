@@ -6,7 +6,7 @@ import subprocess
 import sys
 import argparse
 import json
-
+import glob
 """
     Frontend nipple control over a network 
 """
@@ -14,13 +14,23 @@ import json
 # Construct Server
 app = Flask(__name__)
 
-# Load user data
+###### Load user data
 with open("./user.json", "r") as f:
     user_data = json.load(f)
 
+
+###### Load experiments
+files = glob.glob('./experiments/*.json')
+experiments = []
+for file in files:
+    with open(file, "r") as f:
+        experiments.append(json.load(f))
+
+
 # User data accessed by server requests
 app.data = {
-    "user": user_data
+    "user": user_data,
+    "experiments": experiments
 }
 
 @app.route('/')
@@ -29,9 +39,17 @@ def index():
 
 @app.route('/inventory')
 def inventory():
+    # Unique experiment items
+    inventory = app.data["user"]["inventory"]
+    ingredients = []
+    for experiment in app.data["experiments"]:
+        ingredients.extend(experiment["ingredients"])
+
+
+
     return render_template('inventory.html', **{
-        "inventory": app.data["user"]["inventory"],
-        "ifonly": app.data["user"]["inventory"]
+        "inventory": inventory,
+        "ifonly": ingredients
     })
 
 # @app.route('/orientation')

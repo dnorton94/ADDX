@@ -37,9 +37,9 @@
     <h2> If only... </h2>
     <div id="list-B">
         <ul class="sortable">
-            <li>item 4</li>
-            <li>item 5</li>
-            <li>item 6</li>
+          {% for item in ifonly %}
+            <li>{{ item }}</li>
+          {% endfor %}
         </ul>
     </div>
 
