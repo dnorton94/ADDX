@@ -33,6 +33,10 @@ app.data = {
     "experiments": experiments
 }
 
+# Diff two liusts, thanks: https://www.geeksforgeeks.org/python-difference-two-lists/
+def diff(li1, li2): 
+    return (list(set(li1) - set(li2)))
+
 @app.route('/')
 def index():
     return "TODO"
@@ -45,11 +49,9 @@ def inventory():
     for experiment in app.data["experiments"]:
         ingredients.extend(experiment["ingredients"])
 
-
-
     return render_template('inventory.html', **{
         "inventory": inventory,
-        "ifonly": ingredients
+        "ifonly": diff(ingredients, inventory)
     })
 
 # @app.route('/orientation')
