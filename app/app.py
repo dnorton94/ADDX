@@ -5,6 +5,7 @@ import time
 import subprocess
 import sys
 import argparse
+import json
 
 """
     Frontend nipple control over a network 
@@ -13,8 +14,13 @@ import argparse
 # Construct Server
 app = Flask(__name__)
 
+# Load user data
+with open("./user.json", "r") as f:
+    user_data = json.load(f)
+
 # User data accessed by server requests
 app.data = {
+    "user": user_data
 }
 
 @app.route('/')
@@ -23,7 +29,10 @@ def index():
 
 @app.route('/inventory')
 def inventory():
-    return render_template('inventory.html')
+    return render_template('inventory.html', **{
+        "inventory": app.data["user"]["inventory"],
+        "ifonly": app.data["user"]["inventory"]
+    })
 
 # @app.route('/orientation')
 # def orientation():
@@ -138,7 +147,8 @@ def main(args):
     #     chrome_thread.run()
 
     # Run Server
-    app.run(debug=parsed.debug, host=parsed.host, port=parsed.port)
+    # app.run(debug=parsed.debug, host=parsed.host, port=parsed.port)
+    app.run(debug=True, host=parsed.host, port=parsed.port)
 
 if __name__ == '__main__':
     main(sys.argv[1:])

@@ -26,9 +26,9 @@
     <h2> My Inventory </h2>
     <div id="list-A">
     <ul class="sortable">
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
+      {% for item in inventory %}
+        <li>{{ item }}</li>
+      {% endfor %}
     </ul>
     </div>
 
