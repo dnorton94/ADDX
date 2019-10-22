@@ -1,10 +1,10 @@
 var reagents = [
-"carbonate",
-"sulphuric acid",
-"silver nitrate",
-"potassium nitrate",
-"calcium hypochlorite",
-"potassium dichromate"
+    "carbonate",
+    "sulphuric acid",
+    "silver nitrate",
+    "potassium nitrate",
+    "calcium hypochlorite",
+    "potassium dichromate"
 ];
 
 var temps = [
