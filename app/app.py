@@ -15,7 +15,8 @@ import glob
 app = Flask(__name__)
 
 ###### Load user data
-with open("./user.json", "r") as f:
+user_filename = "./user.json"
+with open(user_filename, "r") as f:
     user_data = json.load(f)
 
 
@@ -29,6 +30,7 @@ for file in files:
 
 # User data accessed by server requests
 app.data = {
+    "user_filename": user_filename,
     "user": user_data,
     "experiments": experiments
 }
@@ -56,8 +58,13 @@ def inventory():
 
 @app.route('/inventoryUpdate', methods=['POST'])
 def inventory_update():
+    # Update user
     inventory = request.form.getlist('inventory[]')
-    print(inventory)
+    app.data["user"]["inventory"] = inventory
+
+    # Serialise
+    with open(app.data["user_filename"], "w") as f:
+        json.dump(app.data["user"],f,indent=4)
 
     return "done"
 
