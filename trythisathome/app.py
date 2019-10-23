@@ -8,7 +8,7 @@ import argparse
 import json
 import glob
 """
-    MyChemicalCookbook Server
+    TryThisAtHome Server
 """
 
 # Construct Server
