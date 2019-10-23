@@ -80,10 +80,16 @@ def reccomendations(max_reqs=3):
         print(experiment["name"])
         print(diffed)
         if reqs <= max_reqs:
-            if reqs in experiments_by_reqs:
-                experiments_by_reqs[reqs] = []
+            title = ""
+            if reqs == 0:
+                title = "Ready to go"
+            else:
+                title = "%i items needed" % reqs
 
-            experiments_by_reqs[reqs].append(experiment)
+            if title not in experiments_by_reqs:
+                experiments_by_reqs[title] = []
+
+            experiments_by_reqs[title].append(experiment)
 
     print(experiments_by_reqs)
 

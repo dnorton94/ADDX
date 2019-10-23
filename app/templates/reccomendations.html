@@ -23,12 +23,16 @@
   <body>
     <h1> MyChemicalCookbook </h1>
 
-    {% for set in experiments %}
-      <h1> {{loop.index-1}} items needed </h1>
-    {% for experiment in set %}
-          <h2>Key: {{experiment['name']}}</h2>
-    {% endfor %}
-    {% endfor %}
+   {% for key, value in experiments.items() %}
+      <h1>{{key}}</h1>
+
+      <ul>
+      {% for exp in value %}
+      <a href="{{ exp['link'] }}"><li>{{ exp['name'] }}</li></a>
+      {% endfor %}
+      </ul>
+
+   {% endfor %}
 
 
 <!--     <h2> If only... </h2>
