@@ -96,6 +96,8 @@ def reccomendations(max_reqs=3):
 
 @app.route('/browse')
 def browse():
+    
+
     return render_template('browse.html')
 
 
