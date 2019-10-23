@@ -1,0 +1,79 @@
+<html>
+  
+  <head>
+    <title>Complia Ux Design</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/radioButtons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/clickButton.css') }}">
+<!-- 
+    <script type=text/javascript src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='js/jquery.knob.js') }}"></script> 
+ -->
+
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+ <!-- <script src="{{ url_for('static', filename='js/dracula.js') }}"></script> -->
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+
+<!-- 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/graphdracula/1.0.3/dracula.min.js"></script>
+ -->
+
+
+
+  </head>
+  
+  <!-- Thanks: http://jsfiddle.net/39ZvN/9/ -->
+
+  <body>
+    <h1> MyChemicalCookbook </h1>
+
+    <div id="canvas"></div>
+    <div>
+      <button id="redraw" onclick="redraw();">redraw</button>
+    </div>
+
+    <div id="mynetwork"></div>
+
+
+
+  </body>
+
+
+  <script type="text/javascript">
+   window.onload = function() {
+// create an array with nodes
+var nodes = new vis.DataSet([
+  { id: 1, label: "Node 1" },
+  { id: 2, label: "Node 2" },
+  { id: 3, label: "Node 3" },
+  { id: 4, label: "Node 4" },
+  { id: 5, label: "Node 5" }
+]);
+
+// create an array with edges
+var edges = new vis.DataSet([
+  { from: 1, to: 3 },
+  { from: 1, to: 2 },
+  { from: 2, to: 4 },
+  { from: 2, to: 5 },
+  { from: 3, to: 3 }
+]);
+
+// create a network
+var container = document.getElementById("mynetwork");
+var data = {
+  nodes: nodes,
+  edges: edges
+};
+var options = {};
+var network = new vis.Network(container, data, options);
+
+   };
+  </script>
+
+
+</html>
