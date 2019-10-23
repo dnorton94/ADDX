@@ -41,7 +41,7 @@ def diff(li1, li2):
 
 @app.route('/')
 def index():
-    return "TODO"
+    return render_template('index.html')
 
 @app.route('/inventory')
 def inventory():

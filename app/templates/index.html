@@ -9,88 +9,18 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/clickButton.css') }}">
 
     <script type=text/javascript src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
-    <script type=text/javascript src="{{ url_for('static', filename='js/jquery.knob.js') }}"></script> 
 
 
   </head>
   
 
   <body>
-    <h1> PsychoNip </h1>
-        <h4>PsychoNip {{ nipple_connected }} </h4>
-        <h4>CV {{ nipple_connected }} </h4>
-        
-        <!-- Levels bruv -->
-        <table>
-        <tr><div class="levelBarBg"><div class="levelBarFg" id="pitchBar">Pitch</div></div></tr>
-        <tr><div class="levelBarBg"><div class="levelBarFg" id="yawBar">Yaw</div></div></tr>
-        <tr><div class="levelBarBg"><div class="levelBarFg" id="rollBar">Roll</div></div></tr>
+        <h1> MyChemicalCookbook </h1>
 
-        <!-- Offset Knobs -->
-        <tr>
-            <td></td>
-            <td><h1>Origin</h1></td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td class="controlItem"><input class="offsetKnob" id="pitchOffset" value="0"></td>
-            <td class="controlItem"><input class="offsetKnob" id="yawOffset" value="0"></div>
-            <td class="controlItem"><input class="offsetKnob" id="rollOffset" value="0"></td>
-            <td class="controlItem"><button class="clickButton" id="tare">tare</button></td>
-            <td class="controlItem"><button class="clickButton" id="map">map</button></td>
-        </tr>
-
-        <!-- Titles -->
-        <tr>
-            <td class="controlItem"><h2>Pitch</h2></td>
-            <td class="controlItem"><h2>Yaw</h2></td>
-            <td class="controlItem"><h2>Roll</h2></td>
-
-            <td class="controlItem"><h2>FREEZE</h2></td>
-            <td class="controlItem"><h3>DEEP FREEZE</h3></td>
-        </tr>
-
-        <!-- Mute -->
-        <tr>
-            <td class="controlItem"><label class="container mute"><input type="checkbox" class="muteButton" id="pitchMute"><span class="checkmark"></span></label></td>
-            <td class="controlItem"><label class="container mute"><input type="checkbox" class="muteButton" id="yawMute"><span class="checkmark"></span></label></td>
-            <td class="controlItem"><label class="container mute"><input type="checkbox" class="muteButton" id="rollMute"><span class="checkmark"></span></label></td>
-            <td class="controlItem"><label class="switch"><input type="checkbox" id="freeze"><span class="slider round"></span></label></td>
-            <td class="controlItem"><label class="container"><input type="checkbox" id="deepFreeze"><span class="checkmark"></span></label></td>   
-        </tr>
-         
- 
-        <!-- Widths -->
-        <tr>
-            <td class="controlItem"><input class="widthKnob" id="pitchWidth" value="100"></td>
-            <td class="controlItem"><input class="widthKnob" id="yawWidth" value="100"></td>
-            <td class="controlItem"><input class="widthKnob" id="rollWidth" value="100"></td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td><h1 class="controlsTitle">Sensitivity</h1></td>
-            <td></td>
-        </tr>
-
-        <!-- Mr. Freeze -->
-        <tr>
-            <td class="controlItem"></td>
-        </tr>
-
-
-        <!-- Tare and Map -->
-        <tr>
-            <td class="controlItem"></td>
-        </tr>
-        
-    </table>
+        <a href="/inventory"><h2> Inventory </h2></a>
+        <a href="/reccomendations"><h2> Recommendations </h2></a>
+        <a href="/browse"><h2> Browse </h2></a>
 
   </body>
-
-  <script type=text/javascript src="{{ url_for('static', filename='js/index.js') }}"></script> 
-
-
 
 </html>
