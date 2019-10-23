@@ -2,15 +2,27 @@
   
   <head>
     <title>Try This At Home</title>
-
+<!-- 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slider.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/radioButtons.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/clickButton.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/clickButton.css') }}"> -->
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+
 <!-- 
     <script type=text/javascript src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
     <script type=text/javascript src="{{ url_for('static', filename='js/jquery.knob.js') }}"></script> 
  -->
+
+
+
 
  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
@@ -29,11 +41,27 @@
   <!-- Thanks: http://jsfiddle.net/39ZvN/9/ -->
 
   <body>
-    <h1> MyChemicalCookbook </h1>
 
-          <a href="/inventory"><h2> Inventory </h2></a>
-        <a href="/reccomendations"><h2> Recommendations </h2></a>
-        <a href="/browse"><h2> Browse </h2></a>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/browse" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="/browse" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Browse</a>
+    <a href="/reccomendations" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Recommend</a>
+    <a href="/inventory" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Inventory</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+        <a href="#" class="w3-bar-item w3-button">Extras</a>
+        <a href="#" class="w3-bar-item w3-button">Media</a>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
 
 
 
