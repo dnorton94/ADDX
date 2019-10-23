@@ -18,6 +18,43 @@ body {font-family: "Lato", sans-serif}
  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 
 
+ <style type="text/css">
+   
+ul .inv{
+  list-style: square outside none;
+  margin: 0;
+  padding: 0;
+}
+ 
+li .inv{
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+ 
+li:last-child .inv{
+  border: none;
+}
+ 
+li a .inv{
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 200px;
+ 
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+ 
+li a:hover .inv{
+  font-size: 30px;
+  background: #f6f6f6;
+}
+
+ </style>
+
 
   </head>
   
@@ -50,12 +87,12 @@ body {font-family: "Lato", sans-serif}
   <br>
   <br>
   <br>
-  
-    <h2> My Inventory </h2>
+
+    <h2 style="padding-top: 45px"> Inventory </h2>
     <div id="list-A">
-    <ul class="sortable" id="inventory">
+    <ul class="sortable inv" id="inventory">
       {% for item in inventory %}
-        <li>{{ item }}</li>
+        <li class="inv">{{ item }}</li>
       {% endfor %}
     </ul>
     </div>

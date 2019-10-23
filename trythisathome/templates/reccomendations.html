@@ -3,10 +3,10 @@
   <head>
     <title>Try This At Home</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+<!--     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slider.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/radioButtons.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/clickButton.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/clickButton.css') }}"> -->
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -14,6 +14,9 @@
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
+
+
+
 </style>
 
 
@@ -48,10 +51,10 @@ body {font-family: "Lato", sans-serif}
 
 
 
-    <h1> MyChemicalCookbook </h1>
+    <h1 style="padding-top: 45px"> Recommend </h1>
 
    {% for key, value in experiments.items() %}
-      <h1>{{key}}</h1>
+      <h2>{{key}}</h2>
 
       <ul>
       {% for exp in value %}
