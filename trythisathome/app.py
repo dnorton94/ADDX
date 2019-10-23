@@ -62,9 +62,9 @@ def inventory_update():
     inventory = request.form.getlist('inventory[]')
     app.data["user"]["inventory"] = inventory
 
-    # Serialise
-    with open(app.data["user_filename"], "w") as f:
-        json.dump(app.data["user"],f,indent=4)
+    # # Serialise
+    # with open(app.data["user_filename"], "w") as f:
+    #     json.dump(app.data["user"],f,indent=4)
 
     return "done"
 

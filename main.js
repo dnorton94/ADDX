@@ -46,11 +46,11 @@ for (i = 0; i < numReceipes; i++) {
 
 var columnDefs = [
     {headerName: "Starting Compound", field: "starting", width: 150},
-    {headerName: "Final Compound", field: "final", width: 90},
-    {headerName: "Reagent", field: "reagent", width: 120},
-    {headerName: "Limiting Reagent", field: "limit", width: 90},
-    {headerName: "Solvent", field: "solvent", width: 110},
-    {headerName: "Temperature", field: "temperature", width: 110},
+    {headerName: "Final Compound", field: "final", width: 150},
+    {headerName: "Reagent", field: "reagent", width: 150},
+    {headerName: "Limiting Reagent", field: "limit", width: 200},
+    {headerName: "Solvent", field: "solvent", width: 210},
+    {headerName: "Temperature", field: "temperature", width: 210},
     // {headerName: "Gold", field: "gold", width: 100},
     // {headerName: "Silver", field: "silver", width: 100},
     // {headerName: "Bronze", field: "bronze", width: 100},
