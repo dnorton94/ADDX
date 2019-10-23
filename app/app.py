@@ -68,6 +68,30 @@ def inventory_update():
 
     return "done"
 
+@app.route('/reccomendations')
+def reccomendations(max_reqs=3):
+    # Initialise
+    experiments_by_reqs = {}
+
+    for experiment in app.data["experiments"]:
+        diffed = diff(experiment["ingredients"], app.data["user"]["inventory"])
+        reqs = len(diffed)
+        print(reqs)
+        print(experiment["name"])
+        print(diffed)
+        if reqs <= max_reqs:
+            if reqs in experiments_by_reqs:
+                experiments_by_reqs[reqs] = []
+
+            experiments_by_reqs[reqs].append(experiment)
+
+    print(experiments_by_reqs)
+
+    return render_template('reccomendations.html', **{
+        "experiments": experiments_by_reqs
+    })
+
+
 # @app.route('/orientation')
 # def orientation():
 #     """
