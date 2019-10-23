@@ -76,9 +76,6 @@ def reccomendations(max_reqs=3):
     for experiment in app.data["experiments"]:
         diffed = diff(experiment["ingredients"], app.data["user"]["inventory"])
         reqs = len(diffed)
-        print(reqs)
-        print(experiment["name"])
-        print(diffed)
         if reqs <= max_reqs:
             title = ""
             if reqs == 0:
