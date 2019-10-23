@@ -96,9 +96,39 @@ def reccomendations(max_reqs=3):
 
 @app.route('/browse')
 def browse():
-    
+    ingredients = []
+    edge_data = []
+    for experiment in experiments:
+        # Take stock
+        ingredients.extend(experiment["ingredients"])
 
-    return render_template('browse.html')
+        # Mark edges
+        for ingredient in experiment["ingredients"]:
+            edge_data.append({
+                "from": ingredient,
+                "to": experiment["name"]
+            })
+
+    # Uniqueify ingredients
+    ingredients = list(set(ingredients))
+
+    # Generate Node data
+    ingredient_nodes = [{
+        "id": ingedient,
+        "label": ingedient,
+        "color": "red"
+    } for ingedient in ingredients]
+
+    experiment_nodes = [{
+        "id": experiment["name"],
+        "label": experiment["name"],
+        "color": "white"
+    } for experiment in experiments]
+
+    return render_template('browse.html', **{
+        "nodes": ingredient_nodes + experiment_nodes,
+        "edges": edge_data
+    })
 
 
 # @app.route('/orientation')
