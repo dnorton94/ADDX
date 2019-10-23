@@ -7,7 +7,18 @@ $(function() {
             item = ui.item;
             newList = oldList = ui.item.parent().parent();
         },
-        stop: function(event, ui) {   
+        stop: function(event, ui) {
+            var inventory = []
+            $("#inventory").children('li').each(function(i, elem) {
+                inventory.push($(elem).text());
+            });
+
+            $.post("/inventoryUpdate", {
+                "inventory": inventory
+            }, 
+            function(response_data){
+                console.log(response_data);
+            })
             // TODO: update server       
             //alert("Moved " + item.text() + " from " + oldList.attr('id') + " to " + newList.attr('id'));
         },

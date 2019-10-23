@@ -25,7 +25,7 @@
 
     <h2> My Inventory </h2>
     <div id="list-A">
-    <ul class="sortable">
+    <ul class="sortable" id="inventory">
       {% for item in inventory %}
         <li>{{ item }}</li>
       {% endfor %}
@@ -36,7 +36,7 @@
 
     <h2> If only... </h2>
     <div id="list-B">
-        <ul class="sortable">
+        <ul class="sortable" id="ifonly">
           {% for item in ifonly %}
             <li>{{ item }}</li>
           {% endfor %}

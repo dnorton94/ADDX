@@ -54,6 +54,13 @@ def inventory():
         "ifonly": diff(ingredients, inventory)
     })
 
+@app.route('/inventoryUpdate', methods=['POST'])
+def inventory_update():
+    inventory = request.form.getlist('inventory[]')
+    print(inventory)
+
+    return "done"
+
 # @app.route('/orientation')
 # def orientation():
 #     """
